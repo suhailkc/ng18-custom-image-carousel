@@ -1,0 +1,59 @@
+.carousel-container {
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 3px;
+  
+    // enables and contains nested `absolute` elements
+    position: relative;
+  
+    /* ------------------------- Style for BOTH buttons ------------------------- */
+    a.carousel-btn {
+      // Some quick styles
+      color: white;
+      background-color: black;
+      border-radius: 50%;
+      text-decoration: none;
+  
+      // enables control of position within the relative container
+      position: absolute;
+  
+      // General width and height of buttons
+      width: 2rem;
+      height: 2rem;
+  
+      // Ensures the icon is centered within the button
+      display: inline-flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      justify-content: center;
+  
+      // Ensures the buttons are centered vertically with math
+      top: calc(50% - (3rem / 2)); // calc({half of container height} - ({half of button height})) 
+  
+      /* ------------------------- Styles for Each Button ------------------------- */
+      &.previous { left: 0; }
+      &.next { right: 0; }
+    }
+
+  }
+
+  a.carousel-btn {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+a.carousel-btn {
+    opacity: 0;
+}
+    
+// HOVER state
+.carousel-container:hover {
+    a.carousel-btn {
+        opacity: 1;
+        transition: 180ms ease-in-out; // threw this in for funsies
+    }
+}
